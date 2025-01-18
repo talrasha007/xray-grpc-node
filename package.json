@@ -1,0 +1,30 @@
+{
+  "name": "xray-grpc",
+  "version": "0.1.0",
+  "description": "GRPC client for xray.",
+  "main": "src/proxyman_pb.js",
+  "scripts": {
+    "proto:generate": "npm run proto:generate_1 && npm run proto:generate_s && npm run proto:generate_c",
+    "proto:generate_1": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src --grpc_out=grpc_js:./src --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin --ts_out=grpc_js:./src --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts -I ./protos ./protos/*.proto",
+    "proto:generate_s": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src --grpc_out=grpc_js:./src --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin --ts_out=grpc_js:./src --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts -I ./protos ./protos/**/*.proto",
+    "proto:generate_c": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src --grpc_out=grpc_js:./src --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin --ts_out=grpc_js:./src --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts -I ./protos ./protos/common/**/*.proto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talrasha007/xray-grpc-node.git"
+  },
+  "keywords": [
+    "Xray",
+    "GRPC"
+  ],
+  "author": "Tal",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/talrasha007/xray-grpc-node/issues"
+  },
+  "homepage": "https://github.com/talrasha007/xray-grpc-node#readme",
+  "devDependencies": {
+    "grpc_tools_node_protoc_ts": "^5.3.3",
+    "grpc-tools": "^1.12.4"
+  }
+}
