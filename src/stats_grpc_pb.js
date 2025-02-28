@@ -83,6 +83,17 @@ var StatsServiceService = exports.StatsServiceService = {
     responseSerialize: serialize_xray_app_stats_command_GetStatsResponse,
     responseDeserialize: deserialize_xray_app_stats_command_GetStatsResponse,
   },
+  getStatsOnline: {
+    path: '/xray.app.stats.command.StatsService/GetStatsOnline',
+    requestStream: false,
+    responseStream: false,
+    requestType: stats_pb.GetStatsRequest,
+    responseType: stats_pb.GetStatsResponse,
+    requestSerialize: serialize_xray_app_stats_command_GetStatsRequest,
+    requestDeserialize: deserialize_xray_app_stats_command_GetStatsRequest,
+    responseSerialize: serialize_xray_app_stats_command_GetStatsResponse,
+    responseDeserialize: deserialize_xray_app_stats_command_GetStatsResponse,
+  },
   queryStats: {
     path: '/xray.app.stats.command.StatsService/QueryStats',
     requestStream: false,
