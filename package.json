@@ -1,6 +1,6 @@
 {
   "name": "xray-grpc",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "GRPC client for xray.",
   "main": "src/proxyman_pb.js",
   "scripts": {
